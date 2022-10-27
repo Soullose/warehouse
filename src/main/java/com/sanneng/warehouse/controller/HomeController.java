@@ -7,9 +7,21 @@ import java.security.Principal;
 
 @RestController
 public class HomeController {
-
+    
     @GetMapping
-    public String jwt(Principal principal) {
-        return "Hello,JWT!" + principal.getName();
+    public String home() {
+        return "Hello , home!";
     }
+    
+    @GetMapping("/user")
+    public String user(Principal principal) {
+        return "Hello , user ! " + principal.getName();
+    }
+    
+    
+    @GetMapping("/admin")
+    public String admin(Principal principal) {
+        return "Hello , admin ! " + principal.getName();
+    }
+    
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,7 +25,7 @@ public class AppUserServiceImpl implements AppUserService{
 
     @Override
     public void addRoleToUser(String username, String roleName) {
-        AppUser appUser = appUserRepo.findAppUserByUsername(username);
+        Optional<AppUser> appUser = appUserRepo.findAppUserByUsername(username);
 
     }
 
